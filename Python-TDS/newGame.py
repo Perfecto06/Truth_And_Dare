@@ -51,21 +51,6 @@ def truths():
     num=random.randint(0,tLen-1)
     truthOrDare.config(text=Truth[num])
 
-def show():
-    #Y=500
-    #for i in range(playerCount+1):
-    #   Y = Y + 20
-    #    Label(root, text=" ", font='Helvetica 13').place(width=100, x=100, y=Y)
-    #    Label(root, text=" ", font='Helvetica 13').place(width=100, x=230, y=Y)
-    Y = 450
-    shw = 'SELECT Name, Score From players;'
-    cursor.execute(shw)
-    result=cursor.fetchall()
-    for row in result:
-        Y = Y + 20
-        Label(root,text=row[0],font='Helvetica 11').place(width=100,x=100,y=Y)
-        Label(root, text=row[1], font='Helvetica 11').place(width=100, x=230, y=Y)
-
 def donee():
     don='UPDATE players SET Score=Score+1 Where Name="%s";' % (name)
     cursor.execute(don)
